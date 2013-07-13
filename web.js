@@ -1,6 +1,6 @@
 var express = require('express');
+var app = express();
 
-var app = express.createServer(express.logger());
 var data = new Buffer(256);
 
 app.get('/', function(request, response) {
@@ -9,9 +9,8 @@ app.get('/', function(request, response) {
     if (err) {
        return console.log(err);
     }
-    response.send(data);
-  };
-  #response.send('Hello World2!');
+    response.send('data');
+  });
 });
 
 var port = process.env.PORT || 5000;
